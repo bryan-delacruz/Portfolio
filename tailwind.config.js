@@ -6,6 +6,7 @@ export default {
       padding: {
         DEFAULT: "1.4rem",
       },
+      center: true,
     },
     extend: {},
   },
