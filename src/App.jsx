@@ -7,6 +7,12 @@ import whatsapp from "./assets/svgs/whatsapp.svg";
 import linkedin from "./assets/svgs/linkedin.svg";
 import github from "./assets/svgs/github.svg";
 
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faReact, faJs, faNodeJs } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+library.add(faReact, faJs, faNodeJs);
+
 function App() {
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const handleMobileBar = () => {
@@ -72,8 +78,8 @@ function App() {
             alt="profile-img"
           />
           <div className="flex flex-col items-center gap-4">
-            <h2 className="text-xl">Bryan De La Cruz</h2>
-            <p className="text-xl">Frontend Software Engineer</p>
+            <p className="text-2xl">Bryan De La Cruz</p>
+            <p className="text-2xl">Frontend Software Engineer</p>
             <div className="w-full flex flex-row justify-around ">
               <button
                 className="bg-black p-2 rounded-full flex items-center"
@@ -98,6 +104,80 @@ function App() {
           </div>
         </div>
       </header>
+      <section className="container mb-4">
+        <div className="mt-4">
+          <h2 className="text-center mb-4 text-xl">ABOUT ME</h2>
+          <p className="text-justify mb-4">
+            Hello, I am Bryan De La Cruz a Frontend Software Engineer with
+            professional training as a Mechatronics Engineer 🎓. Also, I have
+            experience working as an IT and Programmer Analyst in Banking 🏦 and
+            Payment Systems industry 🖥️.
+          </p>
+          <p className="text-justify">
+            I am passionate about Digital Innovation and how it helps
+            organizations to deliver a better product for users 🎯.
+          </p>
+        </div>
+        <div className="mt-4">
+          <h2 className="text-center mb-4 text-xl">MAIN TECH SKILLS</h2>
+          <div className="flex justify-around items-center">
+            <FontAwesomeIcon className="w-11 h-11" icon="fa-brands fa-js" />
+            <svg
+              className="h-11 w-11"
+              viewBox="-10.5 -9.45 21 18.9"
+              fill=""
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="0" cy="0" r="2" fill="currentColor"></circle>
+              <g stroke="currentColor" strokeWidth="1" fill="none">
+                <ellipse rx="10" ry="4.5"></ellipse>
+                <ellipse rx="10" ry="4.5" transform="rotate(60)"></ellipse>
+                <ellipse rx="10" ry="4.5" transform="rotate(120)"></ellipse>
+              </g>
+            </svg>
+            <FontAwesomeIcon
+              className="w-11 h-11"
+              icon="fa-brands fa-node-js"
+            />
+            <p className="font-semibold text-2xl">Express</p>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div className="container">
+          <h2 className="text-center text-xl">PROJECTS</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Projects</th>
+                <th>Frontend</th>
+                <th>Backend</th>
+                <th>Deployment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Project 1</td>
+                <td>React</td>
+                <td>Node.js</td>
+                <td>AWS</td>
+              </tr>
+              <tr>
+                <td>Project 2</td>
+                <td>Angular</td>
+                <td>Java</td>
+                <td>Heroku</td>
+              </tr>
+              <tr>
+                <td>Project 3</td>
+                <td>Vue.js</td>
+                <td>Python</td>
+                <td>Digital Ocean</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
   );
 }
