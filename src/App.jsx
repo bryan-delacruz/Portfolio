@@ -7,6 +7,8 @@ import whatsapp from "./assets/svgs/whatsapp.svg";
 import linkedin from "./assets/svgs/linkedin.svg";
 import github from "./assets/svgs/github.svg";
 
+import project1 from "./assets/imgs/projects/project1.png";
+
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faReact, faJs, faNodeJs } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -38,7 +40,7 @@ function App() {
   };
   return (
     <div>
-      <header className="bg-slate-400 text-slate-200">
+      <header className="bg-slate-400 text-slate-200 mb-4 pb-4">
         <nav
           className={`${
             mobileNavOpen ? "fixed" : "hidden"
@@ -58,7 +60,7 @@ function App() {
             </div>
           </div>
         </nav>
-        <nav className="flex z-10 bg-black">
+        <nav className="flex z-10 bg-black mb-4">
           <div className="container">
             <div className="relative justify-center items-center text-md py-5 flex">
               <h1 className="text-2xl border-b border-black">GozDev</h1>
@@ -104,9 +106,9 @@ function App() {
           </div>
         </div>
       </header>
-      <section className="container mb-4">
+      <section id="abouMe" className="container mb-8">
         <div className="mt-4">
-          <h2 className="text-center mb-4 text-xl">ABOUT ME</h2>
+          <h2 className="text-center mb-8 text-xl">ABOUT ME</h2>
           <p className="text-justify mb-4">
             Hello, I am Bryan De La Cruz a Frontend Software Engineer with
             professional training as a Mechatronics Engineer 🎓. Also, I have
@@ -118,64 +120,89 @@ function App() {
             organizations to deliver a better product for users 🎯.
           </p>
         </div>
-        <div className="mt-4">
-          <h2 className="text-center mb-4 text-xl">MAIN TECH SKILLS</h2>
-          <div className="flex justify-around items-center">
-            <FontAwesomeIcon className="w-11 h-11" icon="fa-brands fa-js" />
-            <svg
-              className="h-11 w-11"
-              viewBox="-10.5 -9.45 21 18.9"
-              fill=""
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <circle cx="0" cy="0" r="2" fill="currentColor"></circle>
-              <g stroke="currentColor" strokeWidth="1" fill="none">
-                <ellipse rx="10" ry="4.5"></ellipse>
-                <ellipse rx="10" ry="4.5" transform="rotate(60)"></ellipse>
-                <ellipse rx="10" ry="4.5" transform="rotate(120)"></ellipse>
-              </g>
-            </svg>
-            <FontAwesomeIcon
-              className="w-11 h-11"
-              icon="fa-brands fa-node-js"
-            />
-            <p className="font-semibold text-2xl">Express</p>
-          </div>
+      </section>
+      <section id="mainTechSkills" className="container mb-8">
+        <h2 className="text-center mb-8 text-xl">MAIN TECH SKILLS</h2>
+        <div className="flex justify-around items-center">
+          <FontAwesomeIcon className="w-11 h-11" icon="fa-brands fa-js" />
+          <svg
+            className="h-11 w-11"
+            viewBox="-10.5 -9.45 21 18.9"
+            fill=""
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle cx="0" cy="0" r="2" fill="currentColor"></circle>
+            <g stroke="currentColor" strokeWidth="1" fill="none">
+              <ellipse rx="10" ry="4.5"></ellipse>
+              <ellipse rx="10" ry="4.5" transform="rotate(60)"></ellipse>
+              <ellipse rx="10" ry="4.5" transform="rotate(120)"></ellipse>
+            </g>
+          </svg>
+          <FontAwesomeIcon className="w-11 h-11" icon="fa-brands fa-node-js" />
+          <p className="font-semibold text-2xl">Express</p>
         </div>
       </section>
-      <section>
-        <div className="container">
-          <h2 className="text-center text-xl">PROJECTS</h2>
-          <table>
-            <thead>
-              <tr>
-                <th>Projects</th>
-                <th>Frontend</th>
-                <th>Backend</th>
-                <th>Deployment</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Project 1</td>
-                <td>React</td>
-                <td>Node.js</td>
-                <td>AWS</td>
-              </tr>
-              <tr>
-                <td>Project 2</td>
-                <td>Angular</td>
-                <td>Java</td>
-                <td>Heroku</td>
-              </tr>
-              <tr>
-                <td>Project 3</td>
-                <td>Vue.js</td>
-                <td>Python</td>
-                <td>Digital Ocean</td>
-              </tr>
-            </tbody>
-          </table>
+      <section id="projects" className="container mb-8">
+        <h2 className="text-center text-xl mb-8">PROJECTS</h2>
+        <div>
+          <div>
+            <img src={project1} alt="project1-img" className="mb-4" />
+            <p className="text-center mb-4 font-bold text-lg">
+              Recipe Food - React App
+            </p>
+            <table className="table-auto border-separate border-spacing-4">
+              <thead>
+                <tr>
+                  <th>Area</th>
+                  <th>Tech</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="">
+                  <td>Frontend</td>
+                  <td className="flex flex-wrap gap-x-2 gap-y-2 justify-evenly">
+                    <span className="px-2 bg-sky-400 text-white rounded-full">
+                      JavaScript
+                    </span>
+                    <span className="px-2 bg-sky-400 text-white rounded-full">
+                      React
+                    </span>
+                    <span className="px-2 bg-sky-400 text-white rounded-full">
+                      CssModules
+                    </span>
+                  </td>
+                </tr>
+                <tr className="">
+                  <td>Backend</td>
+                  <td className="flex flex-wrap gap-x-2 gap-y-2 justify-evenly">
+                    <span className="px-2 bg-sky-400 text-white rounded-full">
+                      NodeJs
+                    </span>
+                    <span className="px-2 bg-sky-400 text-white rounded-full">
+                      ExpressJs
+                    </span>
+                    <span className="px-2 bg-sky-400 text-white rounded-full">
+                      Sequelize
+                    </span>
+                    <span className="px-2 bg-sky-400 text-white rounded-full">
+                      PostgreSQL
+                    </span>
+                  </td>
+                </tr>
+                <tr className="">
+                  <td>Deployment</td>
+                  <td className="flex flex-wrap gap-x-2 gap-y-2 justify-evenly">
+                    <span className="px-2 bg-sky-400 text-white rounded-full">
+                      Vercel
+                    </span>
+                    <span className="px-2 bg-sky-400 text-white rounded-full">
+                      Heroku
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </section>
     </div>
