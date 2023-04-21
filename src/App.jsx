@@ -38,6 +38,21 @@ function App() {
 
     window.open(URL, "_blank");
   };
+
+  const projects = [
+    {
+      name: "Recipe Food - React App",
+      areas: [
+        { name: "frontend", techs: ["javascript", "react", "redux"] },
+        {
+          name: "backend",
+          techs: ["nodejs", "express", "sequelize", "postgresql"],
+        },
+        { name: "deployment", techs: ["vercel", "heroku"] },
+      ],
+    },
+  ];
+
   return (
     <div>
       <header className="bg-slate-400 text-slate-200 mb-4 pb-4">
@@ -145,64 +160,25 @@ function App() {
       <section id="projects" className="container mb-8">
         <h2 className="text-center text-xl mb-8">PROJECTS</h2>
         <div>
-          <div>
-            <img src={project1} alt="project1-img" className="mb-4" />
-            <p className="text-center mb-4 font-bold text-lg">
-              Recipe Food - React App
-            </p>
-            <table className="table-auto border-separate border-spacing-4">
-              <thead>
-                <tr>
-                  <th>Area</th>
-                  <th>Tech</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="">
-                  <td>Frontend</td>
-                  <td className="flex flex-wrap gap-x-2 gap-y-2 justify-evenly">
-                    <span className="px-2 bg-sky-400 text-white rounded-full">
-                      JavaScript
-                    </span>
-                    <span className="px-2 bg-sky-400 text-white rounded-full">
-                      React
-                    </span>
-                    <span className="px-2 bg-sky-400 text-white rounded-full">
-                      CssModules
-                    </span>
-                  </td>
-                </tr>
-                <tr className="">
-                  <td>Backend</td>
-                  <td className="flex flex-wrap gap-x-2 gap-y-2 justify-evenly">
-                    <span className="px-2 bg-sky-400 text-white rounded-full">
-                      NodeJs
-                    </span>
-                    <span className="px-2 bg-sky-400 text-white rounded-full">
-                      ExpressJs
-                    </span>
-                    <span className="px-2 bg-sky-400 text-white rounded-full">
-                      Sequelize
-                    </span>
-                    <span className="px-2 bg-sky-400 text-white rounded-full">
-                      PostgreSQL
-                    </span>
-                  </td>
-                </tr>
-                <tr className="">
-                  <td>Deployment</td>
-                  <td className="flex flex-wrap gap-x-2 gap-y-2 justify-evenly">
-                    <span className="px-2 bg-sky-400 text-white rounded-full">
-                      Vercel
-                    </span>
-                    <span className="px-2 bg-sky-400 text-white rounded-full">
-                      Heroku
-                    </span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+          {projects.map((p) => (
+            <div className="border">
+              <img src={project1} alt="project1-img" className="mb-4" />
+              <p className="text-center mb-4 font-bold text-lg">{p.name}</p>
+              <p className="text-center mb-4 text-lg">Made with</p>
+              <div className="flex justify-around">
+                {p.areas.map((a) => (
+                  <div className="flex flex-col items-center">
+                    <p className="border-b border-black mb-2">{a.name}</p>
+                    <div className="flex flex-col items-center">
+                      {a.techs.map((e) => (
+                        <div>{e}</div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
     </div>
